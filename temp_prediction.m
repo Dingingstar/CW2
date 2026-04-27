@@ -36,5 +36,22 @@ while true
      fprintf('Current Temp: %.2f °C\n', current_temp);
     fprintf('Change Rate : %.2f °C/s\n', rate_c_per_sec);
     fprintf('Predicted Temp in 5 min: %.2f °C\n', predicted_temp);
+    
+    if rate_c_per_min >= -4 && rate_c_per_min <= 4
+        % 温度稳定舒适范围：绿灯
+        writeDigitalPin(a, green, 1);
+        writeDigitalPin(a, yellow, 0);
+        writeDigitalPin(a, red, 0);
+    elseif rate_c_per_min < -4
+        % 降温速率 > -4°C/min：黄灯
+        writeDigitalPin(a, green, 0);
+        writeDigitalPin(a, yellow, 1);
+        writeDigitalPin(a, red, 0);
+    else
+        % 升温速率 > +4°C/min：红灯
+        writeDigitalPin(a, green, 0);
+        writeDigitalPin(a, yellow, 0);
+        writeDigitalPin(a, red, 1);
+    end
     pause(1);  % 1-second sample interval
 end
