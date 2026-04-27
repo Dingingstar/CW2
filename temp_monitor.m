@@ -10,7 +10,6 @@ green = 'D9';
 yellow = 'D10';
 red = 'D11';
 
-% 初始化所有LED关闭
 writeDigitalPin(a, green, 0);
 writeDigitalPin(a, yellow, 0);
 writeDigitalPin(a, red, 0);
