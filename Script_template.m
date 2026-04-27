@@ -35,7 +35,7 @@ avg_temp = mean(temp_array);
 
 % c)
 figure;
-plot(time_array, temp_array, 'b-', 'LineWidth', 1.5);
+plot(time_array, temp_array, 'k-', 'LineWidth', 1.5);
 xlabel('Time (seconds)');
 ylabel('Temperature (°C)');
 title('Temperature Variation Over Time');
@@ -50,12 +50,12 @@ fprintf('Location - %s\n\n', location_str);
 for minute = 0:10
     index = minute * 60 + 1;
     current_temp = temp_array(index);
-    fprintf('Minute\t%d\n', minute);         
-    fprintf('Temperature\t%.2f C\n\n', current_temp);
+    fprintf('Minute\t%d\n', minute);
+    fprintf('Temperature\t%.2f °C\n\n', current_temp);
 end
-fprintf('Max temp\t%.2f C\n', max_temp);
-fprintf('Min temp\t%.2f C\n', min_temp);
-fprintf('Average temp\t%.2f C\n\n', avg_temp);
+fprintf('Max temp\t%.2f °C\n', max_temp);
+fprintf('Min temp\t%.2f °C\n', min_temp);
+fprintf('Average temp\t%.2f °C\n\n', avg_temp);
 fprintf('Data logging terminated\n');
 
 % e)
@@ -66,11 +66,11 @@ for minute = 0:10
     index = minute * 60 + 1;
     current_temp = temp_array(index);
     fprintf(fileID, 'Minute\t%d\n', minute);
-    fprintf(fileID, 'Temperature\t%.2f C\n\n', current_temp);
+    fprintf(fileID, 'Temperature\t%.2f °C\n\n', current_temp);
 end
-fprintf(fileID, 'Max temp\t%.2f C\n', max_temp);
-fprintf(fileID, 'Min temp\t%.2f C\n', min_temp);
-fprintf(fileID, 'Average temp\t%.2f C\n\n', avg_temp);
+fprintf(fileID, 'Max temp\t%.2f °C\n', max_temp);
+fprintf(fileID, 'Min temp\t%.2f °C\n', min_temp);
+fprintf(fileID, 'Average temp\t%.2f °C\n\n', avg_temp);
 fprintf(fileID, 'Data logging terminated\n');
 fclose(fileID); 
 
