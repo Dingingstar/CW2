@@ -32,7 +32,7 @@ while true
         rate_c_per_sec = 0;
         rate_c_per_min = 0;  
     end
-     predicted_temp = current_temp + rate_c_per_min * 5;
+     predicted_temp = smoothed_temp + rate_c_per_min * 5;
      fprintf('Current Temp: %.2f °C\n', current_temp);
     fprintf('Change Rate : %.2f °C/s\n', rate_c_per_sec);
     fprintf('Predicted Temp in 5 min: %.2f °C\n', predicted_temp);
