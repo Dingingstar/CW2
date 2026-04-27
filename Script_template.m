@@ -77,12 +77,6 @@ a = arduino('COM5', 'Uno');
 %% TASK 2 - LED TEMPERATURE MONITORING DEVICE IMPLEMENTATION [25 MARKS]
 temp_monitor(a);
 
-% 2. 定义所有引脚和参数
-temp_monitor(a);
-
-% 3. 【关键】调用函数时，把所有参数都传进去！
-temp_monitor(a, greenPin, yellowPin, redPin, tempPin, V0, TC);
-
 
 %% TASK 3 - ALGORITHMS – TEMPERATURE PREDICTION [30 MARKS]
 
