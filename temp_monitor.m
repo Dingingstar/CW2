@@ -1,10 +1,11 @@
-% temp_monitor real time temperature monitoring system
-% temp_monitor(a) reads temperature from Arduino analog pin A0, displays
-% live data in a 60-second rolling plot with a 1-second update period,
-% and controls three LEDs.
-% Green(D9): steady on 18-24°C, Yellow(D10): 0.5s blink <18°C, Red(D11): 0.25s blink >24°C.
-%  All operations follow a 1-second base period.
-% Input: a - Arduino connection object.
+%TEMP_MONITOR Real-time temperature monitoring and visual alert system
+%TEMP_MONITOR(arduino) reads temperature from a thermistor on analog pin
+%A0 and displays live data in a scrolling plot (60-second window).
+%It provides visual feedback using three LEDs: GREEN (stable 18-24°C),
+%YELLOW (blinking for <18°C), RED (rapid flashing for >24°C).
+%The plot auto-scales and updates every second with temperature data.
+%Connections: GREEN=D9, YELLOW=D10, RED=D11, Thermistor=A0.
+%Input: a - Arduino connection object.
 function temp_monitor(a)
 green = 'D9';
 yellow = 'D10';
